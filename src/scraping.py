@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 
 
 def scrape_table(url, table_id=None):
-    """Download a page and return the values found in its first table."""
     response = requests.get(
         url,
         headers={"User-Agent": "Mozilla/5.0"},

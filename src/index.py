@@ -4,7 +4,6 @@ from country_codes import country_to_iso2
 from scraping import scrape_table
 
 
-# Load a reproducible sample and count victims by nationality.
 trafficking = pd.read_csv(
     "data/human_trafficking.csv",
     low_memory=False,
@@ -25,7 +24,6 @@ print(f"Rows in sample: {len(trafficking)}")
 print(f"Countries found: {len(victims)}")
 
 
-# Scrape and prepare the World Bank poverty table.
 poverty_rows = scrape_table(
     "https://wdi.worldbank.org/table/1.2",
     table_id="scrollTable",
@@ -63,7 +61,6 @@ print("Countries not converted:", poverty.loc[
 ].tolist())
 
 
-# Scrape and prepare the corruption ranking.
 corruption_rows = scrape_table(
     "https://factsinstitute.com/ranking/most-corrupt-countries-in-the-world/"
 )
